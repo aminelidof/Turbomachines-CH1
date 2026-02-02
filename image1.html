@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            background-color: white; 
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 700px;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #1E3A8A;
+            margin: 0 0 20px 0;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #2ecc71;
+            padding-bottom: 10px;
+        }
+        svg { 
+            width: 100%; 
+            height: auto; 
+            display: block;
+            margin: 0 auto;
+        }
+        .axis-label {
+            font-size: 14px;
+            font-weight: bold;
+            fill: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Diagramme de Mollier (h-s) : Détente</h2>
+
+    <svg viewBox="0 0 550 420" xmlns="http://www.w3.org/2000/svg">
+      <text x="250" y="410" class="axis-label">s (Entropie)</text>
+      <text x="-230" y="25" class="axis-label" transform="rotate(-90)">h (Enthalpie)</text>
+
+      <line x1="60" y1="360" x2="520" y2="360" stroke="black" stroke-width="2" /> <line x1="60" y1="360" x2="60" y2="40" stroke="black" stroke-width="2" />  <path d="M 70 90 Q 260 70 480 40" stroke="#e74c3c" fill="transparent" stroke-width="2" stroke-dasharray="5,5"/>
+      <text x="485" y="45" fill="#e74c3c" font-size="12">P1 (Entrée)</text>
+
+      <path d="M 70 280 Q 260 260 480 230" stroke="#3498db" fill="transparent" stroke-width="2" stroke-dasharray="5,5"/>
+      <text x="485" y="235" fill="#3498db" font-size="12">P2 (Échappement)</text>
+
+      <circle cx="130" cy="82" r="5" fill="black"/>
+      <text x="115" y="70" font-weight="bold">1</text>
+
+      <line x1="130" y1="82" x2="130" y2="264" stroke="#2ecc71" stroke-width="3" />
+      <circle cx="130" cy="264" r="5" fill="#2ecc71"/>
+      <text x="105" y="285" fill="#2ecc71" font-weight="bold">2s</text>
+
+      <path d="M 130 82 Q 180 150 240 242" stroke="#f39c12" stroke-width="4" fill="transparent" />
+      <circle cx="240" cy="242" r="6" fill="#f39c12"/>
+      <text x="250" y="255" fill="#f39c12" font-weight="bold">2 (Réel)</text>
+
+      <line x1="45" y1="82" x2="58" y2="82" stroke="black" stroke-width="1" />
+      <line x1="45" y1="242" x2="58" y2="242" stroke="#f39c12" stroke-width="1" />
+      <text x="40" y="160" font-size="11" transform="rotate(-90 40,160)" fill="#555">Δh réel (Travail produit)</text>
+    </svg>
+</div>
+
+</body>
+</html>

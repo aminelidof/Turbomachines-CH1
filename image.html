@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            background-color: white; 
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 700px;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #1E3A8A;
+            margin: 0 0 20px 0;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #4A90E2;
+            padding-bottom: 10px;
+        }
+        svg { 
+            width: 100%; 
+            height: auto; 
+            display: block;
+            margin: 0 auto;
+        }
+        .axis-label {
+            font-size: 14px;
+            font-weight: bold;
+            fill: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Diagramme de Mollier (h-s) : Compression</h2>
+
+    <svg viewBox="0 0 550 420" xmlns="http://www.w3.org/2000/svg">
+      <text x="250" y="410" class="axis-label">s (Entropie)</text>
+      <text x="-230" y="25" class="axis-label" transform="rotate(-90)">h (Enthalpie)</text>
+
+      <line x1="60" y1="360" x2="520" y2="360" stroke="black" stroke-width="2" /> <line x1="60" y1="360" x2="60" y2="40" stroke="black" stroke-width="2" />  <path d="M 70 330 Q 260 310 480 280" stroke="#3498db" fill="transparent" stroke-width="2" stroke-dasharray="5,5"/>
+      <text x="485" y="285" fill="#3498db" font-size="12">P1 (Admission)</text>
+
+      <path d="M 70 190 Q 260 170 480 140" stroke="#e74c3c" fill="transparent" stroke-width="2" stroke-dasharray="5,5"/>
+      <text x="485" y="145" fill="#e74c3c" font-size="12">P2 (Refoulement)</text>
+
+      <circle cx="130" cy="322" r="5" fill="black"/>
+      <text x="115" y="345" font-weight="bold">1</text>
+
+      <line x1="130" y1="322" x2="130" y2="183" stroke="#2ecc71" stroke-width="3" />
+      <circle cx="130" cy="183" r="5" fill="#2ecc71"/>
+      <text x="105" y="175" fill="#2ecc71" font-weight="bold">2s</text>
+
+      <path d="M 130 322 Q 190 260 260 162" stroke="#f39c12" stroke-width="4" fill="transparent" />
+      <circle cx="260" cy="162" r="6" fill="#f39c12"/>
+      <text x="270" y="160" fill="#f39c12" font-weight="bold">2 (Réel)</text>
+
+      <line x1="45" y1="322" x2="58" y2="322" stroke="black" stroke-width="1" />
+      <line x1="45" y1="162" x2="58" y2="162" stroke="#f39c12" stroke-width="1" />
+      <text x="40" y="250" font-size="11" transform="rotate(-90 40,250)" fill="#555">Δh réel (Travail technique)</text>
+    </svg>
+</div>
+
+</body>
+</html>

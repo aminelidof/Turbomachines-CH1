@@ -1,0 +1,30 @@
+/* Fond de page sombre */
+[data-testid="stAppViewContainer"] {
+    background-color: #0e1117;
+}
+
+/* Style de la boîte d'objectifs */
+.box {
+    background: #1d2129;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #0b5394;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+/* Couleurs des titres */
+h1, h2, h3 {
+    color: #58a6ff !important;
+}
+
+/* Style des textes standards */
+p, li {
+    color: #c9d1d9;
+}
+
+/* Ajustement des bordures de séparation */
+hr {
+    border-color: #30363d;
+}

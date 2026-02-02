@@ -1,0 +1,20 @@
+chapitre1_turbomachines/
+│
+├── app.py
+├── pages/
+│   ├── 1_Introduction.py
+│   ├── 2_Definitions.py
+│   ├── 3_Classification.py
+│   ├── 4_Compresseurs.py
+│   ├── 5_Turbines.py
+│   ├── 6_Cycles.py
+│   ├── 7_Bilans.py
+│   ├── 8_Exercices.py
+│   ├── 9_Corrections.py
+│   └── 10_Simulateur.py
+│
+├── utils/
+│   └── diagrams.py
+│
+└── assets/
+    └── style.css
