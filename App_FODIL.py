@@ -51,31 +51,63 @@ def generer_pdf_accueil(theme_name):
 
     return pdf.output(dest='S').encode('latin-1')
 
-# 2. Gestion des Thèmes (Initialisation et Sélection UNIQUE)
-if 'theme_choice' not in st.session_state:
-    st.session_state.theme_choice = "Sombre (Pro)"
+# --- 2. THÈME DARK PERSONNALISÉ (CSS) ---
+st.markdown("""
+    <style>
+    /* 1. Fond principal et texte */
+    [data-testid="stAppViewContainer"] {
+        background-color: #0E1117;
+        color: #FFFFFF;
+    }
 
-st.sidebar.title("🎨 Personnalisation")
-# Suppression du doublon ici pour éviter l'erreur DuplicateElementKey
-theme = st.sidebar.selectbox(
-    "Choisir l'environnement :",
-    ["Sombre (Pro)", "Clair (Lecture)", "Ingénierie (Bleu)"],
-    key="theme_choice" 
-)
+    /* 2. Barre latérale (Sidebar) en Dark */
+    [data-testid="stSidebar"] {
+        background-color: #161B22;
+        border-right: 1px solid #30363D;
+    }
 
-# 3. Export PDF dans la barre latérale
-st.sidebar.divider()
-st.sidebar.subheader("📥 Documents")
-try:
-    pdf_bytes = generer_pdf_accueil(theme)
-    st.sidebar.download_button(
-        label="📄 Télécharger le Syllabus (PDF)",
-        data=pdf_bytes,
-        file_name="Presentation_Turbomachines_M1.pdf",
-        mime="application/pdf"
-    )
-except Exception as e:
-    st.sidebar.error(f"Erreur PDF : {e}")
+    /* 3. Titres de navigation dans la sidebar */
+    .st-emotion-cache-16idsys p {
+        font-weight: bold;
+        color: #58A6FF !important; /* Bleu clair électrique pour le Dark Mode */
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    /* 4. Cartes d'info et blocs (adapté au sombre) */
+    .stInfo, .stSuccess, .stWarning, .stError {
+        background-color: #1F2937 !important;
+        border: 1px solid #30363D !important;
+        color: #E6EDF3 !important;
+    }
+
+    /* 5. Footer Académique Dark */
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #161B22;
+        color: #8B949E;
+        text-align: center;
+        padding: 8px;
+        font-size: 11px;
+        border-top: 1px solid #30363D;
+        z-index: 100;
+    }
+
+    /* 6. Style des boutons de navigation sélectionnés */
+    [data-testid="stSidebarNavLink"] {
+        color: #C9D1D9 !important;
+    }
+    [data-testid="stSidebarNavLink"][aria-current="page"] {
+        background-color: #1F2937 !important;
+        color: #58A6FF !important;
+        font-weight: bold;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # 4. Fonction d'application dynamique du style
 def apply_theme(theme_name):
